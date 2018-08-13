@@ -41,16 +41,17 @@
 						<h5>Powered by PredictionIO and Drupal</h5>
 					</section>
 					<section>
-						<img src="assets/chris_z.jpg" alt="Mug shot of Chris Z" />
+						<img data-src="assets/chris_z.jpg" alt="Mug shot of Chris Z" />
 					      <h2><a href="https://twitter.com/aczietlow">@aczietlow</a></h2>
 					      <span>Drupal Lead Engineer, <a href="https://www.mindgrub.com">Mindgrub</a></span>
 					</section>
 					<section>
-						<img src="assets/colin_c.jpg" alt="Mug shot of Colin C" />
+						<img data-src="assets/colin_c.jpg" alt="Mug shot of Colin C" />
 						<h2><a href="https://twitter.com/ccrampton">@ccrampton</a></h2>
 						<span>Drupal Lead Engineer, <a href="https://www.mindgrub.com">Mindgrub</a></span>
 					</section>
 				</section>
+				<!-- Mile high view of machine learning. -->
 				<section>
 					<section>
 						<h2>Machine Learning</h2>
@@ -65,6 +66,54 @@
 					<section>
 						<h1>Machine Learning</h1>
 						<p>With Great power comes great responsibility meme</p>
+					</section>
+				</section>
+
+				<!-- PredictionIO Stack Overview -->
+				<section>
+					<section>
+						<h2>PredictionIO</h2>
+						<ul>
+							<li class="fragment">Open source (apache-2.0)</li>
+							<li class="fragment">Built by Apache</li>
+							<li class="fragment">Has an awesome animal mascot</li>
+						</ul>
+						<img class="fragment" data-src="assets/prediction-IO-logo.png" alt="PredictionIO Frog logo"/>
+					</section>
+					<section>
+						<h2>PredictionIO</h2>
+						<ul>
+							<li class="fragment">Communicates with your web apps via Rest</li>
+							<li class="fragment">Event Server</li>
+							<li class="fragment">Data Storage</li>
+							<li class="fragment">Machine learning Engines</li>
+						</ul>
+					</section>
+					<section>
+						<img data-src="assets/predictionIO-platform-overview.png" />
+					</section>
+					<section>
+						<h2>PredictionIO: Event Server</h2>
+						<ul>
+							<li class="fragment">Analysis of Data</li>
+							<li class="fragment">Passes data on to ML Engines</li>
+							<li class="fragment">Data can be batch processed or processed in real time</li>
+						</ul>
+					</section>
+					<section>
+						<h2>PredictionIO: Engine</h2>
+							<ul>
+								<li class="fragment">The 'brain' of the stack</li>
+								<li class="fragment">Contains 1 (or more) algorithms to build training models</li>
+								<li class="fragment">Can be queried to make predictions</li>
+								<li class="fragment">Require lots of data</li>
+							</ul>
+					</section>
+					<section>
+						<img data-src="assets/event-server-overview.png" alt="PredictionIO Event Server"/>
+					</section>
+					<section>
+						<img data-src="assets/predictionIO-flow-chart.png" alt="PreductionIO flow chart" />
 					</section>
 				</section>
 
@@ -86,7 +135,8 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				],
+                history: true,
 			});
 		</script>
 		<script>

@@ -155,7 +155,114 @@
 						<img data-src="assets/predictionIO-flow-chart.png" alt="PreductionIO flow chart" />
 					</section>
 				</section>
+				<section>
+					<section>Demo #1</section>
+				</section>
+				<section>
+					<section>Demo #2 (Mindgrub.com)</section>
+				</section>
+				<section>
+					<section>
+						<h2>Prediction Engine</h2>
+						<p>You can build your own</p>
+						<pre class="fragment"><code data-trim contenteditable>
+  def sumArray (m: Array[Double], n: Array[Double]): Array[Double] = {
+    for (i <- 0 until m.length) {m(i) += n(i)}
+    return m
+  }
 
+  def divArray (m: Array[Double], divisor: Double) : Array[Double] = {
+    for (i <- 0 until m.length) {m(i) /= divisor}
+    return m
+  }
+
+  def wordToVector (w:String, m: Word2VecModel, s: Int): Vector = {
+    try {
+      return m.transform(w)
+    } catch {
+      case e: Exception => return Vectors.zeros(s)
+    }
+  }
+
+  def normalizet(line: String) = java.text.Normalizer.normalize(line,java.text.Normalizer.Form.NFKD).replaceAll("\\p{InCombiningDiacriticalMarks}+","").toLowerCase
+
+					</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>Engines are written in Scala or Java</li>
+								<li>Most times are implementations of known algorithms</li>
+								<li>Or you can roll your own</li>
+								<li>If you can stomach the Scala, the Apache APIs aren't bad to work with</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Prediction Engine</h2>
+						<p class="fragment">Proudly invented else where</p>
+						<p class="fragment">To the library!</p>
+						<aside class="notes">
+							The availability to install and tweak existing ML algorithms was one of the reasons that drew us to use PredictionIO
+						</aside>
+					</section>
+					<section>
+						<ul class="smaller-text">
+							<li>Recommendations</li>
+							<ul class="fragment">
+								<li>The Universal Recommender - Cross-Occurrence (CCO) algorithm</li>
+								<li>Recommendation - Collaborative Filtering </li>
+								<li>E-Commerce Recommendation - MLLib ALS E-commerce algorithm fork</li>
+								<li>E-Commerce Recommendation (Java) - Like before but now with more Java!</li>
+								<li>Similar Product - recommends based on user's actions</li>
+								<li>Product Ranking</li>
+								<li>Music Recommendations</li>
+								<li>Complementary Purchase</li>
+								<li>Viewed This Bought That</li>
+								<li>Frequent Pattern Mining - FP Growth algorithm</li>
+								<li>Similar Product with Rating</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Classification</li>
+							<ul>
+								<li></li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Regression</li>
+							<ul>
+								<li></li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Natural Language Processing</li>
+							<ul>
+								<li></li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Clustering</li>
+							<ul>
+								<li></li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Similarity</li>
+							<ul>
+								<li></li>
+							</ul>
+						</ul>
+					</section>
+				</section>
 			</div>
 		</div>
 

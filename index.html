@@ -45,16 +45,16 @@
 					      <h2><a href="https://twitter.com/aczietlow">@aczietlow</a></h2>
 					      <span>Drupal Lead Engineer, <a href="https://www.mindgrub.com">Mindgrub</a></span>
 					</section>
-					<!--<section>-->
-						<!--<img data-src="assets/colin_c.jpg" alt="Mug shot of Colin C" />-->
-						<!--<h2><a href="https://twitter.com/ccrampton">@ccrampton</a></h2>-->
-						<!--<span>Drupal Lead Engineer, <a href="https://www.mindgrub.com">Mindgrub</a></span>-->
-					<!--</section>-->
+					<section>
+						<img data-src="assets/colin_c.jpg" alt="Mug shot of Colin C" />
+						<h2><a href="https://twitter.com/ccrampton">@ccrampton</a></h2>
+						<span>Software Engineer, <a href="https://www.mindgrub.com">Mindgrub</a></span>
+					</section>
 					<section>
 						<h2>Mindgrub</h2>
 						<p>Technical Agency, that also happens to specialize in Drupal</p>
 						<div>
-							<img width="45%" src="assets/mindgrub-culture2.jpg" alt="Mindgrub office and culture ping pong table"/>
+							<img width="45%" data-src="assets/mindgrub-culture2.jpg" alt="Mindgrub office and culture ping pong table"/>
 							<h5 class="fragment blink">Now Hiring</h5>
 						</div>
 						<aside class="notes">
@@ -81,14 +81,31 @@
 						</aside>
 					</section>
 				</section>
+				<section>
+					<section>
+						<h3>1997 - IBM Deep Blue defeats Garry Kasparov at Chess</h3>
+						<img width="80%" data-src="assets/deep-blue.jpg" alt="IBM deep blue chess victor" />
+					</section>
+					<section>
+						<h3>2011 - IBM's Watson crushes it on Jeopardy</h3>
+						<img data-src="assets/watson.jpg" alt="IBM watson winning jeopardy" />
+					</section>
+					<section>
+						<h3>2012 – Google’s X Lab builds ML algorithm to identify cat videos</h3>
+						<img data-src="assets/cat-videos.gif" alt="Cat gif" />
+					</section>
+					<section>
+						<h3>2014 - Sergey Bin announces Google is working on self driving cars</h3>
+						<img width="70%" data-src="assets/google-car.jpg" alt="Google's self driving car" />
+					</section>
+				</section>
 				<!-- Mile high view of machine learning. -->
 				<section>
 					<section>
 						<h2>Machine Learning</h2>
-						<h3><i>What it isn't</i></h3>
+						<h3 class="fragment"><i>What it isn't</i></h3>
 						<ul>
 							<li class="fragment">Magic</li>
-							<li class="fragment">Artificial Intelligence</li>
 							<li class="fragment">Skynet
 								<span class="fragment">... yet</span>
 							</li>
@@ -99,7 +116,7 @@
 					</section>
 					<section>
 						<h2>Machine Learning</h2>
-						<h3><i>What it is</i></h3>
+						<h3 class="fragment"><i>What it is</i></h3>
 						<li class="fragment">Predictive analysis and data modeling</li>
 						<li class="fragment">Uses existing algorithms to discover patterns</li>
 						<li class="fragment">Learns</li>
@@ -108,23 +125,39 @@
 					<section>
 						<h2>Machine Learning</h2>
 						<h3><i>Learns</i></h3>
-						<li class="fragment">Supervised</li>
-						<li class="fragment">Unsupervised</li>
-						<li class="fragment">Semi-supervised</li>
+						<dl>
+							<dt class="fragment">Supervised</dt>
+							<dd class="fragment"><em>All data is labeled, and algorithms learn to predict outcomes.</em></dd>
+							<dt class="fragment">Unsupervised</dt>
+							<dd class="fragment"><em>Data is not labeled and the algorithm learns to structure the data.</em></dd>
+							<dt class="fragment">semi-supervised</dt>
+							<dd class="fragment"><em>Some of the data is labeled, but most is not.</em></dd>
+						</dl>
 						<aside class="notes">
-							<dl>
-								<dt>Supervised</dt>
-								<dd><em>Data contains response variable (label) and ML is modeling the likelihood that label will be present in yet unseen data</em></dd>
-								<dt>Unsupervised</dt>
-								<dd><em>The label isn’t defined and is more about finding patterns in the data. Groups the data</em></dd>
-								<dt>semi-supervised</dt>
-								<dd><em>Mix of both</em></dd>
-							</dl>
+							<ul>
+								<li>Supervised</li>
+								<ul>
+									<li>Have input and output variables. ML learning the relationship between these and can be queried for the desired output.</li>
+									<li>We as the teacher know the right answer</li>
+									<li>How likely are the Patriots to win this year.</li>
+								</ul>
+								<li>Unsupervised</li>
+									<ul>
+										<li>The input is known but the output is not</li>
+										<li>Video recognition. Analysis visual aspects in videos along with title and description text. We can't know for certain that a video Kevin records and uploads is about Drupal, but given enough data the model can gain confidence.</li>
+										<li>Clustering</li>
+									</ul>
+								<li>Mixed</li>
+								<ul>
+									<li>A mix of both.</li>
+									<li>Image Analysis where only some of the pictures have text or metadata associated with them. Trying to categorize pictures of dogs or cat.</li>
+								</ul>
+							</ul>
 						</aside>
 					</section>
 					<section>
-						<h1>Machine Learning</h1>
-						<p>With Great power comes great responsibility meme</p>
+						<h2>Machine Learning</h2>
+						<img data-src="assets/responsibility.gif" alt="Simpsons with great power comes great responsibility"/>
 					</section>
 				</section>
 
@@ -134,7 +167,6 @@
 						<h2>PredictionIO</h2>
 						<ul>
 							<li class="fragment">Open source (apache-2.0)</li>
-							<li class="fragment">Built by Apache</li>
 							<li class="fragment">Has library of algorithms available</li>
 							<li class="fragment">Easy to wire to web apps</li>
 							<li class="fragment">Has an awesome animal mascot</li>
@@ -167,7 +199,7 @@
 								<li class="fragment">The 'brain' of the stack</li>
 								<li class="fragment">Contains 1 (or more) algorithms to build training models</li>
 								<li class="fragment">Can be queried to make predictions</li>
-								<li class="fragment">Require lots of data</li>
+								<li class="fragment">More data === better</li>
 							</ul>
 					</section>
 					<section>
@@ -175,7 +207,7 @@
                         <aside class="notes">
                             Tech stack.
                             <ul>
-                                <li>Event Server - Apache HBase</li>
+                                <li>Event Server - Apache Spark</li>
                                 <li>Training - Apache Spark</li>
                                 <li>Data store - Elasticsearch</li>
                             </ul>
@@ -219,10 +251,9 @@
 					</code></pre>
 						<aside class="notes">
 							<ul>
-								<li>Engines are written in Scala or Java</li>
+								<li>Engines SDKs are written in Scala, Java, Ruby, and PHP</li>
 								<li>Most times are implementations of known algorithms</li>
 								<li>Or you can roll your own</li>
-								<li>If you can stomach the Scala, the Apache APIs aren't bad to work with</li>
 							</ul>
 						</aside>
 					</section>
@@ -290,6 +321,16 @@
 							<ul>
 								<li></li>
 							</ul>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Resources</h2>
+						<ul>
+							<li><a href="https://github.com/aczietlow/PredictionIO-presentation">Slides</a></li>
+							<li><a href="https://github.com/aczietlow/PredictionIO">PredictionIO Dockerfile</a></li>
+							<li><a href="https://hub.docker.com/r/czietlow/predictionio/">PredictionIO Image</a></li>
 						</ul>
 					</section>
 				</section>

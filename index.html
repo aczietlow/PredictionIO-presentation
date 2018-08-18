@@ -83,6 +83,9 @@
 				</section>
 				<section>
 					<section>
+						<h2>How'd we get here?</h2>
+					</section>
+					<section>
 						<h3>1997 - IBM Deep Blue defeats Garry Kasparov at Chess</h3>
 						<img width="80%" data-src="assets/deep-blue.jpg" alt="IBM deep blue chess victor" />
 					</section>
@@ -217,81 +220,88 @@
 						<img data-src="assets/predictionIO-flow-chart.png" alt="PreductionIO flow chart" />
 					</section>
 				</section>
+				<!-- CLI demo -->
 				<section>
-					<section>Demo #1</section>
-					<p>Movie Recommendations</p>
-				</section>
-				<section>
-					<h2>Initial setup</h2>
-					<ul>
-						<li class="fragment">Have PredictionIO & dependencies installed</li>
-						<ul class="fragment">
-							<li>We have a self contained Docker image</li>
-							<li>Works beautifully with Docksal</li>
+					<section>
+						<img data-src="assets/experimental.jpg" alt="experimental"/>
+					</section>
+					<section>
+						<h2>Demo #1</h2>
+						<p>Product Recommendations</p>
+					</section>
+					<section>
+						<h2>Initial setup</h2>
+						<ul>
+							<li class="fragment">Have PredictionIO & dependencies installed</li>
+							<ul class="fragment">
+								<li>We have a self contained Docker image</li>
+								<li>Works beautifully with Docksal</li>
+							</ul>
+							<li class="fragment">Install desired engines</li>
+							<li class="fragment">PredictionIO documentation is your friend</li>
 						</ul>
-						<li class="fragment">Install desired engines</li>
-						<li class="fragment">PredictionIO documentation is your friend</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Build Pio</h2>
-					<pre><code class="fragment" data-trim contenteditable>pio build --verbose</code></pre>
-					<pre><code class="fragment" data-trim contenteditable>
-[INFO] [Engine$] Using command '/PredictionIO-0.12.0-incubating/sbt/sbt' at /engines/similar-text to build.
-[INFO] [Engine$] If the path above is incorrect, this process will fail.
-[INFO] [Engine$] Uber JAR disabled. Making sure lib/pio-assembly-0.12.0-incubating.jar is absent.
-[INFO] [Engine$] Going to run: /PredictionIO-0.12.0-incubating/sbt/sbt  package assemblyPackageDependency in /engines/similar-text
-[INFO] [Engine$] [info] Loading project definition from /engines/similar-text/project
-[INFO] [Engine$] [info] Set current project to pio-template-text-similarity (in build file:/engines/similar-text/)
-[INFO] [Engine$] [success] Total time: 2 s, completed Aug 18, 2018 3:30:58 PM
-[INFO] [Engine$] [info] Including from cache: scala-library-2.11.8.jar
-[INFO] [Engine$] [info] Checking every *.class/*.jar file's SHA-1.
-[INFO] [Engine$] [info] Merging files...
-[INFO] [Engine$] [warn] Merging 'META-INF/MANIFEST.MF' with strategy 'discard'
-[INFO] [Engine$] [warn] Strategy 'discard' was applied to a file
-[INFO] [Engine$] [info] Assembly up to date: /engines/similar-text/target/scala-2.11/pio-template-text-similarity-assembly-0.1-SNAPSHOT-deps.jar
-[INFO] [Engine$] [success] Total time: 12 s, completed Aug 18, 2018 3:31:09 PM
-[INFO] [Engine$] Compilation finished successfully.
-[INFO] [Engine$] Looking for an engine...
-[INFO] [Engine$] Found pio-template-text-similarity_2.11-0.1-SNAPSHOT.jar
-[INFO] [Engine$] Found pio-template-text-similarity-assembly-0.1-SNAPSHOT-deps.jar
-[INFO] [Engine$] Build finished successfully.
-[INFO] [Pio$] Your engine is ready for training.
-					</code></pre>
-					<aside class="notes">
-						Compiles the engine code
+					</section>
+					<section>
+						<h2>Build Pio</h2>
+						<pre><code class="fragment" data-trim contenteditable>pio build --verbose</code></pre>
+						<pre><code class="fragment" data-trim contenteditable>
+	[INFO] [Engine$] Using command '/PredictionIO-0.12.0-incubating/sbt/sbt' at /engines/similar-text to build.
+	[INFO] [Engine$] If the path above is incorrect, this process will fail.
+	[INFO] [Engine$] Uber JAR disabled. Making sure lib/pio-assembly-0.12.0-incubating.jar is absent.
+	[INFO] [Engine$] Going to run: /PredictionIO-0.12.0-incubating/sbt/sbt  package assemblyPackageDependency in /engines/similar-text
+	[INFO] [Engine$] [info] Loading project definition from /engines/similar-text/project
+	[INFO] [Engine$] [info] Set current project to pio-template-text-similarity (in build file:/engines/similar-text/)
+	[INFO] [Engine$] [success] Total time: 2 s, completed Aug 18, 2018 3:30:58 PM
+	[INFO] [Engine$] [info] Including from cache: scala-library-2.11.8.jar
+	[INFO] [Engine$] [info] Checking every *.class/*.jar file's SHA-1.
+	[INFO] [Engine$] [info] Merging files...
+	[INFO] [Engine$] [warn] Merging 'META-INF/MANIFEST.MF' with strategy 'discard'
+	[INFO] [Engine$] [warn] Strategy 'discard' was applied to a file
+	[INFO] [Engine$] [info] Assembly up to date: /engines/similar-text/target/scala-2.11/pio-template-text-similarity-assembly-0.1-SNAPSHOT-deps.jar
+	[INFO] [Engine$] [success] Total time: 12 s, completed Aug 18, 2018 3:31:09 PM
+	[INFO] [Engine$] Compilation finished successfully.
+	[INFO] [Engine$] Looking for an engine...
+	[INFO] [Engine$] Found pio-template-text-similarity_2.11-0.1-SNAPSHOT.jar
+	[INFO] [Engine$] Found pio-template-text-similarity-assembly-0.1-SNAPSHOT-deps.jar
+	[INFO] [Engine$] Build finished successfully.
+	[INFO] [Pio$] Your engine is ready for training.
+						</code></pre>
+						<aside class="notes">
+							Compiles the engine code
 
-						most often scala
-					</aside>
+							most often scala
+						</aside>
+					</section>
+					<section>
+						<h2>Pio train</h2>
+						<pre><code class="fragment" data-trim contenteditable>pio train</code></pre>
+						<pre><code class="fragment" data-trim contenteditable>
+	[INFO] [CoreWorkflow$] Inserting persistent model
+	[INFO] [CoreWorkflow$] Updating engine instance
+	[INFO] [CoreWorkflow$] Training completed successfully.
+						</code></pre>
+						<aside class="notes">
+							Reads event data and trains the models
+						</aside>
+					</section>
+					<section>
+						<h2>Demo</h2>
+					</section>
+					<section>
+						<h2>For when the <i>live</i> demo doesn't work</h2>
+						<pre><code class="fragment" data-trim contenteditable>
+	{
+	  "itemScores":[
+		{"item":"i0","score":0.7071067811865475},
+		{"item":"i1","score":0.7071067811865475},
+		{"item":"i2","score":0.5773502691896258},
+		{"item":"i3","score":0.5773502691896258}
+	  ]
+	}
+						</code></pre>
+					</section>
 				</section>
-				<section>
-					<h2>Pio train</h2>
-					<pre><code class="fragment" data-trim contenteditable>pio train</code></pre>
-					<pre><code class="fragment" data-trim contenteditable>
-[INFO] [CoreWorkflow$] Inserting persistent model
-[INFO] [CoreWorkflow$] Updating engine instance
-[INFO] [CoreWorkflow$] Training completed successfully.
-					</code></pre>
-					<aside class="notes">
-						Reads event data and trains the models
-					</aside>
-				</section>
-				<section>
-					<h3>Demo</h3>
-					<pre><code class="fragment" data-trim contenteditable>
-{
-  "itemScores":[
-    {"item":"i0","score":0.7071067811865475},
-    {"item":"i1","score":0.7071067811865475},
-    {"item":"i2","score":0.5773502691896258},
-    {"item":"i3","score":0.5773502691896258}
-  ]
-}
-					</code></pre>
-				</section>
-				<section>
-					<section>Demo #2 (Mindgrub.com)</section>
-				</section>
+				<!-- Library of all of the things. -->
 				<section>
 					<section>
 						<h2>Prediction Engine</h2>
@@ -419,12 +429,28 @@
 				</section>
 				<section>
 					<section>
+						<section>Demo #2 (Mindgrub.com)</section>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Stay tuned</h2>
+						<p class="fragment">Releasing Official PredictionIO Docker Images</p>
+						<img width="60%" class="fragment" data-src="assets/drupal-commerce.png" alt="drupal commerce demo store"/>
+						<p class="fragment">Drupal Module(s) (?) maybe</p>
+
+					</section>
+					<section>
 						<h2>Resources</h2>
 						<ul>
 							<li><a href="https://github.com/aczietlow/PredictionIO-presentation">Slides</a></li>
 							<li><a href="https://github.com/aczietlow/PredictionIO">PredictionIO Dockerfile</a></li>
 							<li><a href="https://hub.docker.com/r/czietlow/predictionio/">PredictionIO Image</a></li>
 						</ul>
+					</section>
+					<section>
+						<div><span>fin</span><span class="fragment"> project stop</span></div>
+						<img class="fragment" data-src="assets/docksal-logo.png" />
 					</section>
 				</section>
 			</div>

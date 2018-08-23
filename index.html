@@ -176,11 +176,18 @@
 						<h2>PredictionIO</h2>
 						<ul>
 							<li class="fragment">Open source (apache-2.0)</li>
-							<li class="fragment">Has library of algorithms available</li>
+							<li class="fragment">Has library of algorithms (engines) available</li>
 							<li class="fragment">Easy to wire to web apps</li>
 							<li class="fragment">Has an awesome animal mascot</li>
 						</ul>
 						<img class="fragment" data-src="assets/prediction-IO-logo.png" alt="PredictionIO Frog logo"/>
+						<aside class="notes">
+							<ul>
+								<li><strong>machine learning server</strong></li>
+								<li>Substantial library so you don't have to build ML engines from scratch</li>
+								<li>story behind the frog</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>PredictionIO</h2>
@@ -190,6 +197,14 @@
 							<li class="fragment">Data Storage</li>
 							<li class="fragment">Machine learning Engines</li>
 						</ul>
+						<aside class="notes">
+							<ul>
+								<li>so how does it work?</li>
+								<li>your web app sends data to the event server via rest api</li>
+								<li>event data is stored pio-side</li>
+								<li>machine learning engines use stored event data to train and serve predictions</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<img data-src="assets/predictionIO-platform-overview.png" />
@@ -197,10 +212,15 @@
 					<section>
 						<h2>PredictionIO: Event Server</h2>
 						<ul>
-							<li class="fragment">Analysis of Data</li>
+							<li class="fragment">Apache HBase, MySQL, PostgreSQL</li>
 							<li class="fragment">Passes data on to ML Engines</li>
-							<li class="fragment">Data can be batch processed or processed in real time</li>
 						</ul>
+						<aside class="notes">
+							<ul>
+								<li>by default, uses Apache HBase as it's data store, but its not limited to hbase (mysql)</li>
+								<li>Intermediary between your app and ML engines</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>PredictionIO: Engine</h2>
@@ -212,7 +232,7 @@
 							</ul>
 					</section>
 					<section>
-						<img data-src="assets/event-server-overview.png" alt="PredictionIO Event Server"/>
+						<img data-src="assets/pio-architecture.svg" alt="PredictionIO Event Server"/>
                         <aside class="notes">
                             Tech stack.
                             <ul>
@@ -221,9 +241,6 @@
                                 <li>Data store - Elasticsearch/HBase/Mysql</li>
                             </ul>
                         </aside>
-					</section>
-					<section>
-						<img data-src="assets/predictionIO-flow-chart.png" alt="PreductionIO flow chart" />
 					</section>
 				</section>
 				<!-- CLI demo -->
